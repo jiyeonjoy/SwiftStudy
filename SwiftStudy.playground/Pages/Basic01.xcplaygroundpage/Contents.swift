@@ -1,6 +1,20 @@
 import Foundation
 
 // -------------------------------------------------//
+// initializer(생성자)
+struct iPhone {
+    var model: String
+
+    init() {
+        model = "iPhone 13"
+    }
+}
+
+let iPhone13 = iPhone()
+//let iPhone14 = iPhone(model: "iPhone 14") // init() 정의 안해줬으면 에러 안났을 텐데 생성자를 정의해줘서 해당 값 에러남.
+
+
+// -------------------------------------------------//
 //struct vs. class 차이점과 공통점
 //
 //✅ 공통점
