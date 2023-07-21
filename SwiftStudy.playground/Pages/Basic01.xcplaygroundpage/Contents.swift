@@ -1,5 +1,17 @@
 import Foundation
 
+// 03
+// inout
+func makeTriple(num: inout Int) {
+    num *= 3
+}
+
+var num = 8
+makeTriple(num: &num)
+
+print(num) // 24
+
+
 // 02
 // throws
 enum DivideError: Error {
