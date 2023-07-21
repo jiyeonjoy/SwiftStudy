@@ -19,8 +19,8 @@ struct SecondHandItem {
     }
 }
 
-var usedMacbook = SecondHandItem(name: "M1 MacBook")
-usedMacbook.history
+var usedMacbook = SecondHandItem(name: "M1 MacBook") // history 생성되지 않음.
+usedMacbook.history // history 접근할 때 생성됨.
 
 
 // -------------------------------------------------//
