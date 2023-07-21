@@ -1,6 +1,34 @@
 import Foundation
 
 // -------------------------------------------------//
+// Access Control
+//- 외부 접근 가능 >  `public`  > `internal` (default) > `fileprivate`  > `private` > 내부 접근 가능
+struct UserAccount {
+    private var id: String
+    private var bill: Int
+    var name: String
+    
+    init(id: String, bill: Int, name: String) {
+        self.id = id
+        self.bill = bill
+        self.name = name
+    }
+    
+    func billDescription() -> String {
+        return "\(id)'s billing amount : \(bill) name : \(name)"
+    }
+}
+
+var user01 = UserAccount(id: "1234", bill: 400, name: "Mike")
+
+//user01.bill = 100 - 에러남 접근 안됨.
+//user01.id = "1123" - 에러남 접근 안됨.
+user01.name = "joy" // 접근 가능.
+
+let billDescription01 = user01.billDescription()
+
+
+// -------------------------------------------------//
 // Lazy properties
 struct Transactions {
     init() {
