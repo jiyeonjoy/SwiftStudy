@@ -1,6 +1,43 @@
 import Foundation
 
 // -------------------------------------------------//
+// Lazy properties
+struct Transactions {
+    init() {
+        print("Loading self history.. ")
+    }
+}
+
+
+struct SecondHandItem {
+    var name: String
+//    var history: Transactions = Transactions()
+    lazy var history: Transactions = Transactions()
+    
+    init(name: String) {
+        self.name = name
+    }
+}
+
+var usedMacbook = SecondHandItem(name: "M1 MacBook")
+usedMacbook.history
+
+
+// -------------------------------------------------//
+// 현재 객체 지칭 - self
+struct iPhone2 {
+    var model: String
+
+    init(model: String = "iPhone 13") {
+        self.model = model
+    }
+}
+
+let iPhone2_13 = iPhone2()
+let iPhone2_14 = iPhone2(model: "iPhone 14")
+
+
+// -------------------------------------------------//
 // initializer(생성자)
 struct iPhone {
     var model: String
